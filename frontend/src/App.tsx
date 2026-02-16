@@ -252,7 +252,7 @@ function App() {
           {/* Left Column - Input Section */}
           <div className="space-y-6">
             {/* Job Description Section */}
-            <div className="bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-700">
+            <div className="bg-gray-800/90 rounded-lg p-6 shadow-lg box-glow">
               <label htmlFor="job-description" className="block text-sm font-semibold mb-3 text-gray-300 font-sans">
                 Job Description
               </label>
@@ -269,11 +269,11 @@ function App() {
       </div>
 
             {/* Resume Upload Section */}
-            <div className="bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-700">
+            <div className="bg-gray-800/90 rounded-lg p-6 shadow-lg box-glow">
               <label htmlFor="resume-upload" className="block text-sm font-semibold mb-3 text-gray-300">
                 Upload Resumes (.txt files only)
               </label>
-              <div className="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center hover:border-blue-500 transition-colors">
+              <div className="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center hover:border-blue-500/70 transition-colors shadow-[0_0_15px_rgba(96,165,250,0.08)] hover:shadow-[0_0_20px_rgba(96,165,250,0.15)]">
                 <input
                   ref={fileInputRef}
                   id="resume-upload"
@@ -400,7 +400,7 @@ function App() {
           </div>
 
           {/* Right Column - Results Section */}
-          <div className="bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-700">
+          <div className="bg-gray-800/90 rounded-lg p-6 shadow-lg box-glow">
             <h2 className="font-display text-2xl font-bold mb-4 text-gray-200">Match Results</h2>
             
             {error && (
@@ -437,7 +437,7 @@ function App() {
                   return (
                     <div
                       key={index}
-                      className={`${topThreeStyle.cardBg} rounded-lg p-5 border-2 ${topThreeStyle.border} ${topThreeStyle.hoverBorder} transition-all shadow-md hover:shadow-lg ${
+                      className={`${topThreeStyle.cardBg} rounded-lg p-5 border-2 ${topThreeStyle.border} ${topThreeStyle.hoverBorder} transition-all shadow-md hover:shadow-lg shadow-[0_0_20px_rgba(96,165,250,0.08)] hover:shadow-[0_0_28px_rgba(96,165,250,0.15)] ${
                         isTopThree ? 'ring-2 ring-offset-2 ring-offset-gray-800' : ''
                       } ${
                         index === 0 ? 'ring-yellow-500/50' : 

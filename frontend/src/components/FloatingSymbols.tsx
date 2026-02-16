@@ -64,8 +64,8 @@ function FloatingIcon({
           pointerEvents: 'none',
           userSelect: 'none',
           fontSize: `${32 * scale}px`,
-          opacity: 0.35,
-          filter: 'drop-shadow(0 0 8px rgba(96, 165, 250, 0.2))',
+          opacity: 0.28,
+          filter: 'drop-shadow(0 0 6px rgba(100, 116, 139, 0.35))',
           transition: 'opacity 0.2s',
         }}
         className="floating-symbol"
@@ -113,9 +113,11 @@ function FloatingShape({
       <meshStandardMaterial
         color={color}
         transparent
-        opacity={0.12}
+        opacity={0.18}
         roughness={0.9}
         metalness={0.1}
+        emissive={color}
+        emissiveIntensity={0.08}
       />
     </mesh>
   )
@@ -138,21 +140,21 @@ export function Scene() {
       <FloatingShape
         position={[-2.5, 0.5, -5]}
         shape="box"
-        color="#60a5fa"
+        color="#64748b"
         speed={0.25}
         phase={0}
       />
       <FloatingShape
         position={[3, -1.5, -4]}
         shape="cylinder"
-        color="#a78bfa"
+        color="#475569"
         speed={0.2}
         phase={1}
       />
       <FloatingShape
         position={[-4, -1, -3]}
         shape="cone"
-        color="#34d399"
+        color="#64748b"
         speed={0.18}
         phase={2}
       />
@@ -162,10 +164,7 @@ export function Scene() {
 
 export default function FloatingSymbols() {
   return (
-    <div
-      className="fixed inset-0 -z-10"
-      style={{ background: 'linear-gradient(145deg, #0f172a 0%, #1e293b 50%, #0f172a 100%)' }}
-    >
+    <div className="fixed inset-0 -z-10 bg-black">
       <Suspense fallback={null}>
         <Canvas
           camera={{ position: [0, 0, 8], fov: 50 }}
