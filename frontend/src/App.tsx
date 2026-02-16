@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import FloatingSymbols from './components/FloatingSymbols'
 
 interface Resume {
   name: string
@@ -233,14 +234,15 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-100">
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
+    <div className="min-h-screen text-gray-100 relative">
+      <FloatingSymbols />
+      <div className="container mx-auto px-4 py-8 max-w-6xl relative z-0">
         {/* Title Section */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          <h1 className="font-display text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent tracking-tight">
             Smart Resume Matching System
           </h1>
-          <p className="text-gray-400 text-lg">
+          <p className="font-sans text-gray-400 text-lg md:text-xl">
             Match resumes against job descriptions using AI-powered similarity analysis
           </p>
       </div>
@@ -251,7 +253,7 @@ function App() {
           <div className="space-y-6">
             {/* Job Description Section */}
             <div className="bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-700">
-              <label htmlFor="job-description" className="block text-sm font-semibold mb-3 text-gray-300">
+              <label htmlFor="job-description" className="block text-sm font-semibold mb-3 text-gray-300 font-sans">
                 Job Description
               </label>
               <textarea
@@ -399,7 +401,7 @@ function App() {
 
           {/* Right Column - Results Section */}
           <div className="bg-gray-800 rounded-lg p-6 shadow-lg border border-gray-700">
-            <h2 className="text-2xl font-bold mb-4 text-gray-200">Match Results</h2>
+            <h2 className="font-display text-2xl font-bold mb-4 text-gray-200">Match Results</h2>
             
             {error && (
               <div className="mb-4 p-4 bg-red-900/30 border border-red-500 rounded-lg">
